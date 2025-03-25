@@ -5,3 +5,9 @@ class Task(models.Model):
     description = models.TextField(blank=True)
     is_created = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created']
+    
+    def __str__(self):
+        return self.title
